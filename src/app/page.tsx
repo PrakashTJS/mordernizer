@@ -1,3 +1,5 @@
+import CtaForm from "@/components/CtaForm";
+import Modal from "@/components/Modal";
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -25,29 +27,25 @@ const Home = () => {
       <SeoMeta />
       <section className="section pt-14">
         <div className="container">
-          <div className="row justify-center">
-            <div className="mb-16 text-center lg:col-7">
+          <div className="flex row justify-center">
+            <div className="flex flex-col items-center mb-16 text-center lg:col-7">
               <h1
-                className="mb-4"
+                className="mb-4 text-cyan-950"
                 dangerouslySetInnerHTML={markdownify(banner.title)}
               />
               <p
                 className="mb-8"
                 dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
               />
-              {banner.button!.enable && (
-                <a className="btn btn-primary" href={banner.button!.link}>
-                  {banner.button!.label}
-                </a>
-              )}
+              <CtaForm />
             </div>
             {banner.image && (
               <div className="col-12">
                 <ImageFallback
                   src={banner.image}
                   className="mx-auto"
-                  width="800"
-                  height="420"
+                  width="300"
+                  height="300"
                   alt="banner image"
                   priority
                 />

@@ -36,7 +36,7 @@ const Logo = ({ src }: { src?: string }) => {
 
   return (
     <Link href="/" className="navbar-brand inline-block">
-      {logoPath ? (
+      {/* {logoPath ? (
         <Image
           width={logo_width.replace("px", "") * 2}
           height={logo_height.replace("px", "") * 2}
@@ -52,7 +52,8 @@ const Logo = ({ src }: { src?: string }) => {
         logo_text
       ) : (
         title
-      )}
+      )} */}
+      Modernizer/_
     </Link>
   );
 };
